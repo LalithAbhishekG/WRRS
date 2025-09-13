@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/home";
+import Home from "./Pages/Home.jsx";
 import About from "./Pages/About";
-import OurImpact from "./Pages/OurImpact";
+import OurImpact from "./Pages/OurImpact.jsx";
 import GetInvolved from "./Pages/GetInvolved";
 import NewsEvents from "./Pages/NewsEvents";
 
