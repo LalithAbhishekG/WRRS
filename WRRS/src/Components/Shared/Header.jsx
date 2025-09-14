@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-8xl mx-auto md:px-20 px-4">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-1 flex mt-1">
                         <img
@@ -67,7 +67,7 @@ export default function Header() {
 
             {mobileMenuOpen && (
                 <div className="md:hidden bg-white shadow-lg">
-                    <div className="px-6 py-4 space-y-4">
+                    <div className="px-6 py-20 space-y-4">
                         <div className="font-medium text-sm text-pink-900 hover:text-pink-700">
                             About Us
                         </div>
