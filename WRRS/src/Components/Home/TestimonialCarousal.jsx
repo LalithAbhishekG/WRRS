@@ -43,14 +43,13 @@ const TestimonialsCarousel = () => {
 
   return (
     <div className="bg-[#fefbff] h-auto py-16 px-4">
-      {/* Title */}
+      
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-pink-800">Testimonials</h2>
       </div>
 
-      {/* Testimonial Card */}
       <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
-        {/* Avatar */}
+      
         <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-200 mb-8">
           <img
             src={testimonials[currentIndex].avatar}
@@ -59,17 +58,16 @@ const TestimonialsCarousel = () => {
           />
         </div>
 
-        {/* Quote */}
+       
         <div className="text-center text-gray-700 text-lg md:text-xl mb-6 leading-relaxed">
           "{testimonials[currentIndex].text}"
         </div>
 
-        {/* Author */}
+      
         <div className="text-center text-pink-700 font-medium">
           – {testimonials[currentIndex].name}
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button

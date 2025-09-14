@@ -70,14 +70,13 @@ const DailyBlogsCarousel = () => {
     },
   ];
 
-  // Force re-render on resize
+
   useEffect(() => {
     const handleResize = () => setForceUpdate(prev => !prev);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Determine how many cards per slide
   const itemsPerSlide = window.innerWidth >= 768 ? 3 : 1;
   const totalSlides = Math.ceil(blogs.length / itemsPerSlide);
   const currentItems = blogs.slice(currentIndex * itemsPerSlide, (currentIndex + 1) * itemsPerSlide);
@@ -88,14 +87,14 @@ const DailyBlogsCarousel = () => {
 
   return (
     <div className="bg-[#fffcfe] h-auto py-16 px-4">
-      {/* Title */}
+ 
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-pink-800">Daily Blogs</h2>
       </div>
 
-      {/* Carousel Container — Pure Flexbox */}
+      
       <div className="flex flex-col items-center">
-        {/* Card Row — Horizontal on desktop, vertical on mobile */}
+
         <div className={`flex ${itemsPerSlide === 1 ? 'flex-col items-center' : 'flex-row flex-wrap justify-center gap-6'} max-w-6xl w-full`}>
           {currentItems.map((blog) => (
             <div
@@ -105,15 +104,15 @@ const DailyBlogsCarousel = () => {
               } max-w-[320px] bg-white rounded-lg shadow-md overflow-hidden mb-6 flex flex-col`}
               style={{ minHeight: '400px' }}
             >
-              {/* ✅ Image as full background — use the URL from the const */}
+       
               <div
                 className="w-full h-48 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: `url(${blog.image})`, // 👈 Easy to replace with your real image URL
+                  backgroundImage: `url(${blog.image})`,
                 }}
               ></div>
 
-              {/* ✅ Text overlay — centered, clean, no absolute positioning */}
+            
               <div className="p-4 flex-grow flex flex-col justify-center items-center text-center">
                 <h3 className="font-semibold text-gray-800 text-sm md:text-base">{blog.title}</h3>
                 <p className="text-sm text-gray-600 mt-1">{blog.subtitle}</p>
@@ -123,7 +122,6 @@ const DailyBlogsCarousel = () => {
           ))}
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex mt-8 space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
