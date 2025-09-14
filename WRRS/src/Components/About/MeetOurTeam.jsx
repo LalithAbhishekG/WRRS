@@ -104,7 +104,7 @@ export default function Team() {
                   <h2 className="text-2xl font-bold text-[#BC1EB0]">
                     {person.name}
                   </h2>
-                  <p className="text-[#E590DA] font-medium mt-2 mb-4">
+                  <p className="text-[#91007d] font-medium mt-2 mb-4">
                     {person.role}
                   </p>
                   <p className="text-black text-base leading-relaxed">
@@ -117,7 +117,7 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#F8F7FC]  ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#BC1EB0] leading-tight">
@@ -136,7 +136,7 @@ export default function Team() {
                 <h2 className="mt-6 text-2xl font-bold text-[#BC1EB0]">
                   {person.name}
                 </h2>
-                <p className="text-[#E590DA] font-medium mt-2 mb-4">
+                <p className="text-[#91007d] font-medium mt-2 mb-4">
                   {person.role}
                 </p>
                 <p className="text-black text-sm leading-relaxed">

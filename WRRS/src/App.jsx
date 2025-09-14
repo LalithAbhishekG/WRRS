@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import OurImpact from "./Pages/OurImpact.jsx";
 import GetInvolved from "./Pages/GetInvolved";
 import NewsEvents from "./Pages/NewsEvents";
+import TeamsPage from "./Pages/Teams";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/our-impact" element={<OurImpact />} />
         <Route path="/get-involved" element={<GetInvolved />} />
         <Route path="/news-events" element={<NewsEvents />} />
+        <Route path="/teams" element={<TeamsPage />} />
       </Routes>
     </div>
   );

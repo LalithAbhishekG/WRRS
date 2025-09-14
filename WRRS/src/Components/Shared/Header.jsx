@@ -36,17 +36,11 @@ export default function Header() {
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-50 cursor-pointer"
                                         onClick={() => setDropdownOpen(false)}
                                     >
-                                        Our Mission
+                                        Our Story
                                     </Link>
+                                   
                                     <Link
-                                        to="/about"
-                                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 cursor-pointer"
-                                        onClick={() => setDropdownOpen(false)}
-                                    >
-                                        Our Vision
-                                    </Link>
-                                    <Link
-                                        to="/about"
+                                        to="/teams"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-50 cursor-pointer"
                                         onClick={() => setDropdownOpen(false)}
                                     >
