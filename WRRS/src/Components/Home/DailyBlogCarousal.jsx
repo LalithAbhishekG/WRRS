@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const DailyBlogsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,52 +17,56 @@ const DailyBlogsCarousel = () => {
   ];
 
   useEffect(() => {
-    const handleResize = () => setForceUpdate(prev => !prev);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const handleResize = () => setForceUpdate((prev) => !prev);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const itemsPerSlide = window.innerWidth >= 768 ? 3 : 1;
   const totalSlides = Math.ceil(blogs.length / itemsPerSlide);
-  const currentItems = blogs.slice(currentIndex * itemsPerSlide, (currentIndex + 1) * itemsPerSlide);
+  const currentItems = blogs.slice(
+    currentIndex * itemsPerSlide,
+    (currentIndex + 1) * itemsPerSlide
+  );
 
   const goToSlide = (index) => setCurrentIndex(index);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  const prevSlide = () =>
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
 
   return (
-    <div className="bg-[#fffcfe] h-auto py-16 px-4">
-      {/* Title */}
+    <div className="bg-[#F8F7FC] h-auto py-16 px-4">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-pink-800">Daily Blogs</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#BC1EB0]">
+          Daily Blogs
+        </h2>
       </div>
 
-      {/* Blogs */}
       <div className="flex flex-col items-center">
-        <div className={`flex ${itemsPerSlide === 1 ? 'flex-col items-center' : 'flex-row flex-wrap justify-center gap-6'} max-w-6xl w-full`}>
+        <div
+          className={`flex ${
+            itemsPerSlide === 1
+              ? "flex-col items-center"
+              : "flex-row flex-wrap justify-center gap-6"
+          } max-w-6xl w-full`}
+        >
           {currentItems.map((blog) => (
             <div
               key={blog.id}
               className={`flex-shrink-0 w-full ${
-                itemsPerSlide === 3 ? 'md:w-1/3' : 'w-full'
-              } max-w-[320px] bg-white rounded-lg shadow-md overflow-hidden mb-6 flex flex-col`}
-              style={{ minHeight: '400px' }}
+                itemsPerSlide === 3 ? "md:w-1/3" : "w-full"
+              } max-w-[320px] bg-white rounded-lg shadow-md overflow-hidden mb-6 flex flex-col border border-[#E590DA]`}
+              style={{ minHeight: "400px" }}
             >
-              {/* Image */}
               <div
                 className="w-full h-48 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${blog.image})` }}
               ></div>
 
-              {/* Content */}
               <div className="p-4 flex-grow flex flex-col justify-center items-center text-center">
-                <h3 className="font-semibold text-gray-800 text-sm md:text-base">{blog.title}</h3>
+                <h3 className="font-semibold text-gray-800 text-sm md:text-base">
+                  {blog.title}
+                </h3>
                 <p className="text-sm text-gray-600 mt-1">{blog.subtitle}</p>
                 <p className="text-xs text-gray-500 mt-2">{blog.date}</p>
               </div>
@@ -70,11 +74,10 @@ const DailyBlogsCarousel = () => {
           ))}
         </div>
 
-        {/* Dots + Buttons */}
         <div className="flex items-center space-x-4 mt-8">
           <button
             onClick={prevSlide}
-            className="bg-pink-700 text-white w-10 h-10 rounded-full shadow hover:bg-pink-800 flex items-center justify-center text-lg"
+            className="bg-[#BC1EB0] text-white w-10 h-10 rounded-full shadow hover:bg-[#A21A9A] flex items-center justify-center text-lg"
           >
             ❮
           </button>
@@ -85,7 +88,7 @@ const DailyBlogsCarousel = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-pink-700' : 'bg-gray-300'
+                  index === currentIndex ? "bg-[#BC1EB0]" : "bg-[#BFBFC2]"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -94,7 +97,7 @@ const DailyBlogsCarousel = () => {
 
           <button
             onClick={nextSlide}
-            className="bg-pink-700 text-white w-10 h-10 rounded-full shadow hover:bg-pink-800 flex items-center justify-center text-lg"
+            className="bg-[#BC1EB0] text-white w-10 h-10 rounded-full shadow hover:bg-[#A21A9A] flex items-center justify-center text-lg"
           >
             ❯
           </button>
@@ -105,4 +108,3 @@ const DailyBlogsCarousel = () => {
 };
 
 export default DailyBlogsCarousel;
-  

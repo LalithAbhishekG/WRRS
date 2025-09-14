@@ -81,32 +81,25 @@ export default function Team() {
 
   return (
     <>
-      {/* BOARD OF DIRECTORS (Now Section 1) */}
       <section className="py-20 px-6 bg-[#F8F7FC]">
         <div className="max-w-6xl mx-auto">
-          {/* Title */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold text-[#BC1EB0] leading-tight">
               BOARD OF DIRECTORS
             </h1>
-            <div className="w-16 h-px bg-[#F9DEF5] mx-auto mt-6"></div>
+            <div className="w-16 h-px bg-[#F8F7FC] mx-auto mt-6"></div>
           </div>
-
-          {/* Directors List */}
           <div className="space-y-16">
             {directors.map((person) => (
               <div
                 key={person.id}
                 className="flex flex-col md:flex-row items-start md:items-center gap-10"
               >
-                {/* Image */}
                 <img
                   src={person.image}
                   alt={person.name}
                   className="w-full md:w-1/3 h-72 object-cover rounded-xl shadow-sm"
                 />
-
-                {/* Content */}
                 <div className="flex-1 text-justify">
                   <h2 className="text-2xl font-bold text-[#BC1EB0]">
                     {person.name}
@@ -114,7 +107,7 @@ export default function Team() {
                   <p className="text-[#E590DA] font-medium mt-2 mb-4">
                     {person.role}
                   </p>
-                  <p className="text-[#BFBFC2] text-base leading-relaxed">
+                  <p className="text-black text-base leading-relaxed">
                     {person.description}
                   </p>
                 </div>
@@ -124,41 +117,29 @@ export default function Team() {
         </div>
       </section>
 
-      {/* OUR STAFF (Now Section 2, grid) */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Title */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#BC1EB0] leading-tight">
               OUR STAFF
             </h1>
-            <div className="w-20 h-px bg-[#F9DEF5] mx-auto mt-6"></div>
+            <div className="w-20 h-px bg-[#F8F7FC] mx-auto mt-6"></div>
           </div>
-
-          {/* Cards Grid */}
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {staff.map((person) => (
-              <div
-                key={person.id}
-                className="group cursor-default text-justify"
-              >
-                {/* Image */}
+              <div key={person.id} className="group cursor-default text-justify">
                 <img
                   src={person.image}
                   alt={person.name}
                   className="w-full h-72 object-cover rounded-xl shadow-sm"
                 />
-
-                {/* Name & Role */}
                 <h2 className="mt-6 text-2xl font-bold text-[#BC1EB0]">
                   {person.name}
                 </h2>
                 <p className="text-[#E590DA] font-medium mt-2 mb-4">
                   {person.role}
                 </p>
-
-                {/* Description */}
-                <p className="text-[#BFBFC2] text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed">
                   {person.description}
                 </p>
               </div>

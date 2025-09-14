@@ -1,17 +1,9 @@
-
-import { useState } from "react";
-import {
-  FileText,
-  Wallet,
-  Users,
-  Briefcase,
-} from "lucide-react";
+import { FileText, Wallet, Users, Briefcase } from "lucide-react";
 import Header from "../Components/Shared/Header";
 import Footer from "../Components/Shared/Footer";
 import Banner from "../Components/Shared/Banner";
 
-export default function ReportsAndResources() {
-  // Data for each section
+export default function OurImpact() {
   const sections = [
     {
       id: "financial",
@@ -104,63 +96,74 @@ export default function ReportsAndResources() {
       <Header />
       <Banner heading="Our Impact" />
 
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-[#F8F7FC] min-h-screen">
         {/* Header */}
-        <header className="bg-white py-6 px-6 md:px-12">
+        <header className="bg-white py-10 px-6 md:px-12 shadow-sm">
           <div className="max-w-6xl mx-auto text-center">
-            <p className="text-sm text-gray-600 uppercase tracking-wide">Reports & Resources</p>
+            <p className="text-sm text-gray-600 uppercase tracking-wide">
+              Reports & Resources
+            </p>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-1">
               Measuring Impact with WISE
             </h1>
-            <div className="w-20 h-1 bg-[#BC1EB0] mx-auto mt-3"></div>
+            <div className="w-20 h-1 bg-[#BC1EB0] mx-auto mt-3 rounded-full"></div>
           </div>
 
           {/* Intro Text */}
-          <div className="max-w-4xl mx-auto mt-8 text-center text-gray-700 text-sm leading-relaxed">
+          <div className="max-w-4xl mx-auto mt-8 text-center text-gray-700 text-base leading-relaxed">
             <p className="mb-4">
               To measure the impact of your support on women’s lives, WE launched{" "}
-              <span className="font-semibold text-[#BC1EB0]">WISE: Women’s Impact, Sustainability & Empowerment Project.</span>
+              <span className="font-semibold text-[#BC1EB0]">
+                WISE: Women’s Impact, Sustainability & Empowerment Project.
+              </span>
             </p>
-            <p className="mb-4">
-              The WISE project is our data-driven assessment – led by our skilled volunteers in collaboration with our grant partners – to evaluate how our funding of micro-loans, financial training, and other social supports lead to sustained improvements in the women’s lives. WISE gives us the data that tells the concrete story of positive change.
+            <p className="mb-4 text-justify">
+              The WISE project is our data-driven assessment – led by our skilled
+              volunteers in collaboration with our grant partners – to evaluate how
+              our funding of micro-loans, financial training, and other social
+              supports lead to sustained improvements in the women’s lives. WISE
+              gives us the data that tells the concrete story of positive change.
             </p>
-            <p>
-              Below is our 2024 impact based on WISE metrics from our core four areas to measure women’s progress across WE-funded projects: Financial Literacy, Change in Provider Role, Change in Decision Making, and Business Sustainability.
+            <p className="text-justify">
+              Below is our 2024 impact based on WISE metrics from our core four
+              areas to measure women’s progress across WE-funded projects:
+              Financial Literacy, Change in Provider Role, Change in Decision
+              Making, and Business Sustainability.
             </p>
           </div>
         </header>
 
-        {/* Main Content - Clean, scrollable, no cards */}
+        {/* Main Content */}
         <main className="py-16 px-6 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-16">
+          <div className="max-w-6xl mx-auto space-y-20">
             {sections.map((section, index) => (
               <div key={section.id}>
                 {/* Icon & Title */}
                 <div className="flex flex-col items-center text-center mb-10">
                   <div className="mb-6">{section.icon}</div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#BC1EB0] mb-4">
                     {section.title}
                   </h2>
-                  <p className="text-gray-600 text-sm leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-gray-700 text-base leading-relaxed max-w-3xl mx-auto text-justify">
                     {section.description}
                   </p>
                 </div>
 
-                {/* Stats Grid - Simple, no card styling */}
+                {/* Stats Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                   {section.stats.map((stat, idx) => (
                     <div key={idx}>
-                      <h3 className="font-semibold text-[#BC1EB0] text-sm mb-2">
+                      <h3 className="font-semibold text-[#A21A9A] text-sm mb-2">
                         {stat.org}
                       </h3>
-                      <p className="text-gray-700 text-sm leading-relaxed">
+                      <p className="text-gray-700 text-sm leading-relaxed text-justify">
                         {stat.text}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                {/* Divider between sections (except last) */}
+                {/* Divider */}
                 {index < sections.length - 1 && (
                   <hr className="border-t border-gray-300 my-12" />
                 )}

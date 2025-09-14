@@ -42,13 +42,13 @@ export default function News() {
       image:
         "https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     },
-     {
+    {
       id: 6,
-      title: "New Partnership with Local Schools",
+      title: "Community Spotlight: Local Leaders",
       description:
-        "We are excited to announce a new initiative partnering with local schools to support education...",
+        "Highlighting inspiring leaders from our community who are making a lasting impact...",
       image:
-        "https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     },
   ];
 
@@ -58,11 +58,7 @@ export default function News() {
   // ✅ Detect screen size and set cards per slide
   useEffect(() => {
     const updateCards = () => {
-      if (window.innerWidth < 768) {
-        setCardsPerSlide(1); // mobile → 1 card
-      } else {
-        setCardsPerSlide(3); // desktop → 3 cards
-      }
+      setCardsPerSlide(window.innerWidth < 768 ? 1 : 3);
     };
 
     updateCards();
@@ -80,8 +76,21 @@ export default function News() {
     setCurrent((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
+  // ✅ Prevent invalid index when resizing
+  useEffect(() => {
+    if (current >= totalSlides) {
+      setCurrent(totalSlides - 1);
+    }
+  }, [cardsPerSlide, totalSlides, current]);
+
+  // ✅ Auto-slide every 6s
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 6000);
+    return () => clearInterval(timer);
+  }, [totalSlides]);
+
   return (
-    <section className="bg-white py-16 h-auto">
+    <section className="bg-[#F8F7FC] py-16 h-auto">
       {/* Section Title */}
       <h1 className="text-3xl md:text-5xl font-bold text-center text-[#BC1EB0] mb-12">
         LATEST NEWS
@@ -97,7 +106,7 @@ export default function News() {
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
               <div
                 key={slideIndex}
-                className="w-full flex-shrink-0 flex px-4 space-x-4"
+                className="w-full flex-shrink-0 flex px-2 md:px-4 space-x-4"
               >
                 {news
                   .slice(
@@ -107,7 +116,7 @@ export default function News() {
                   .map((item) => (
                     <div
                       key={item.id}
-                      className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition duration-300 overflow-hidden flex flex-col h-full flex-1"
+                      className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition duration-300 overflow-hidden flex flex-col h-full flex-1 min-w-0"
                     >
                       {/* Image */}
                       <div className="h-48">
@@ -123,7 +132,7 @@ export default function News() {
                         <h2 className="text-lg font-bold text-gray-900 mb-2">
                           {item.title}
                         </h2>
-                        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                        <p className="text-gray-700 text-sm leading-relaxed flex-grow line-clamp-3">
                           {item.description}
                         </p>
                       </div>
@@ -134,7 +143,7 @@ export default function News() {
           </div>
         </div>
 
-        {/* Navigation + Dots together */}
+        {/* Navigation + Dots */}
         <div className="mt-6 flex justify-center items-center space-x-4">
           {/* Prev */}
           <button
