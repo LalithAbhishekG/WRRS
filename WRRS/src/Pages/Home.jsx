@@ -7,7 +7,7 @@ import TestimonialsCarousel from "../Components/Home/TestimonialCarousal";
 import Footer from "../Components/Shared/Footer";
 
 export default function Home() {
-  // Define blog data here (or move to a data file later)
+
 
 
   return (
@@ -16,7 +16,6 @@ export default function Home() {
       <Homehero />
       <EventsCarousel />
 
-      {/* Who We Are */}
       <section className="bg-[#fdf8ff] py-12 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex justify-center flex-col">
@@ -54,7 +53,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Mission */}
       <section className="bg-[#FFF5F7] py-16 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
@@ -83,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ways to Volunteer */}
+
       <section className="py-16 bg-[#f9f5f8]">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#BC1EB0] mb-12">

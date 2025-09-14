@@ -1,13 +1,13 @@
-import Logo from "../../Assets/Logo.png";
+import Logo from "../../Assets/Shared/Logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-[#F8F7FC]">
 
-      <div className="bg-[#BC1EB0] text-white py-6 px-6 text-center">
+      <div className="bg-pink-900 text-white py-6 px-6 text-center">
         <p className="text-lg font-medium">Interest in contributing towards empowering women?</p>
         <button className="mt-4 bg-white text-[#BC1EB0] font-medium px-6 py-2 rounded-lg hover:bg-[#F9DEF5] transition-colors">
-          Yes I want to Help ❤️
+          Yes I want to Help 
         </button>
       </div>
 
@@ -16,7 +16,7 @@ export default function Footer() {
       
           <div className="text-center md:text-left">
             <img src={Logo} alt="WRRS Logo" className="h-12 mx-auto md:mx-0 mb-4" />
-            <p className="text-[#BFBFC2] text-sm">Women Redemption Restore Society – Empowering women through education, care, and dignity.</p>
+            <p className="text-[#3b3b3b] text-sm">Women Redemption Restore Society – Empowering women through education, care, and dignity.</p>
           </div>
     
           {[
@@ -29,7 +29,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link, j) => (
                   <li key={j}>
-                    <a href="#" className="text-[#BFBFC2] hover:text-[#BC1EB0] text-sm transition-colors">
+                    <a href="#" className="text-[#242424] hover:text-[#BC1EB0] text-sm transition-colors">
                       {link}
                     </a>
                   </li>
@@ -41,7 +41,7 @@ export default function Footer() {
           
           <div className="text-center md:text-left">
             <h4 className="font-bold text-[#BC1EB0] mb-3">Contact</h4>
-            <p className="text-[#BFBFC2] text-sm leading-relaxed">
+            <p className="text-[#333333] text-sm leading-relaxed">
               wrrs.contact@gmail.com<br />
               Chennai: 044-23456789<br />
               Coimbatore: 0422-3456789<br />

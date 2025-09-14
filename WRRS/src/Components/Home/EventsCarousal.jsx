@@ -25,7 +25,7 @@ export default function EventsCarousel() {
       </h2>
 
       <div className="relative max-w-7xl mx-auto overflow-hidden rounded-lg shadow-lg">
-        {/* Slides */}
+      
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -40,7 +40,7 @@ export default function EventsCarousel() {
           ))}
         </div>
 
-        {/* Navigation Arrows */}
+    
         <button
           onClick={prevSlide}
           className="absolute top-1/2 left-4 -translate-y-1/2 bg-[#BC1EB0] text-white p-2 rounded-full shadow hover:bg-[#9c1892]"
@@ -54,7 +54,7 @@ export default function EventsCarousel() {
           ❯
         </button>
 
-        {/* Pagination Dots */}
+     
         <div className="absolute bottom-4 w-full flex justify-center space-x-2">
           {images.map((_, idx) => (
             <button
