@@ -3,11 +3,11 @@ import React from "react";
 export default function Involve() {
   return (
     <div className="w-full">
-      {/* Donate Section */}
+
       <div className="min-h-screen flex items-center justify-center bg-pink-50/20 px-6 md:px-16 py-16">
-        <section className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-7xl">
-          {/* Image */}
-          <div className="w-full md:w-1/2 flex justify-center">
+        <section className="flex flex-col md:flex-row items-center justify-center gap-14 w-full max-w-8xl">
+     
+          <div className="w-full  flex justify-center">
             <img
               src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca"
               alt="Donate"
@@ -15,8 +15,7 @@ export default function Involve() {
             />
           </div>
 
-          {/* Content + Form */}
-          <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+          <div className="w-full flex flex-col items-center justify-center">
             <h2 className="text-4xl md:text-5xl font-bold text-pink-700 mb-6 text-center">
               Make a Difference – Donate Now
             </h2>
@@ -26,7 +25,6 @@ export default function Involve() {
               hope where it’s needed most.
             </p>
 
-            {/* Donate Form */}
             <form className="bg-white border border-gray-300 shadow-md rounded-2xl p-8 w-full max-w-md">
               <label className="block text-left mb-4">
                 <span className="text-pink-700 font-semibold">Full Name</span>
@@ -66,11 +64,10 @@ export default function Involve() {
         </section>
       </div>
 
-      {/* Volunteer Section */}
       <div className="min-h-screen flex items-center justify-center bg-pink-50/20 px-6 md:px-16 py-16">
-        <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 w-full max-w-7xl">
-          {/* Image */}
-          <div className="w-full md:w-1/2 flex justify-center">
+        <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-14 w-full max-w-8xl">
+
+          <div className="w-full  flex justify-center">
             <img
               src="https://images.unsplash.com/photo-1509099836639-18ba1795216d"
               alt="Volunteer"
@@ -78,8 +75,8 @@ export default function Involve() {
             />
           </div>
 
-          {/* Content + Form */}
-          <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+       
+          <div className="w-full flex flex-col items-center justify-center">
             <h2 className="text-4xl md:text-5xl font-bold text-pink-700 mb-6 text-center">
               Join Hands – Volunteer With Us
             </h2>
@@ -93,7 +90,7 @@ export default function Involve() {
               community.
             </p>
 
-            {/* Volunteer Form */}
+        
             <form className="bg-white border border-gray-300 shadow-md rounded-2xl p-8 w-full max-w-md">
               <label className="block text-left mb-4">
                 <span className="text-pink-700 font-semibold">Full Name</span>
